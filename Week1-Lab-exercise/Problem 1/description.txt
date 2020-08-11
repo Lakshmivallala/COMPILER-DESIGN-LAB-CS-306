@@ -1,0 +1,29 @@
+Program 2 of Week 1: Implementation of Language recogniser Lab exercise
+
+Implementation of Language recognizer for set of all strings over input alphabet ∑={a,b} containing even number of a’s and even number of b’s.
+
+Solution:
+The language L consists of the following strings that are acceptable:
+
+L= {ε,aa,bbbb,abab,baba,aaaabbbb,............}
+
+L consists of the strings such that n(a's)/2==0 and n(b's)/2==0.
+Epsilon (ε) also belongs to L since (0%2)==0.
+
+The strings can be categorized in one of the following:
+
+1. Even number of a's and Even number of b's (EE) ----> q0
+2. Odd number of a's and Even number of b's (OE)  ----> q2
+3. Odd number of a's and Odd number of b's (OO)   ----> q3
+4. Even number of a's and Odd number of b's (EO)  ----> q4
+
+For DFA/Transition diagram- (https://tinyurl.com/y5drzw3e)
+DFA M={Q,∑,δ,Q0,F}
+Q={q0,q1,q2,q3}, ∑={a,b}, Q0=q0, F=q0
+δ=
+{
+δ(q0->a)=>q1,(EE->OE);	δ(q0->b)=>q3,(EE->EO);
+δ(q1->a)=>q0,(OE->EE);	δ(q1->b)=>q2,(OE->OO);
+δ(q2->a)=>q3,(OO->EO);	δ(q2->b)=>q1,(OO->OE);
+δ(q3->a)=>q2,(EO->OO);	δ(q3->b)=>qo,(EO->EE);
+}
