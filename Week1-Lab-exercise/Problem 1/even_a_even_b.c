@@ -65,3 +65,22 @@ void main()
 	else
 		printf("String has not been accepted.");
 }
+
+
+// #include<stdio.h>
+// int swap(int,int);
+
+// void main()
+// {
+// 	int a=73,b=79;
+// 	swap(a,b);
+// 	printf("jre %d %d",a,b);
+// }
+// int swap(int x,int y)
+// {
+// 	int temp;
+// 	temp=x;
+// 	x=y;
+// 	y=temp;
+// 	return (0);
+// }

@@ -1,0 +1,28 @@
+Compiler Design Lab (CS 306): Week 2 Programs using Lex tool:
+
+a. Identification of Vowels and Consonants
+
+Aim: Identifying number of vowels and consonants
+	
+Algorithm:
+1. Define a string
+2. If any character in the string matches any of the character (a,e,i,o,u,A,E,I,O,U), print as vowel
+3. If any character lies between 'a' and 'z' excluding the vowels, print as consonant
+
+CODE:
+%{ 
+int flag = 0; 
+%} 
+
+%% 
+[a|e|i|o|u|A|E|I|O|U] {printf("%s is a vowel\n", yytext); 
+    flag++;}
+.    {printf("%s is a consonant\n", yytext);} 
+\n {return 0;} 
+%% 
+
+int yywrap(){} 
+int main(){ 
+yylex();
+return 0; 
+} 
